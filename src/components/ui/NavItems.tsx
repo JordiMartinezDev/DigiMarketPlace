@@ -2,10 +2,13 @@
 
 import { PRODUCT_CATEGORIES } from "@/config";
 import React, { useState } from "react";
+import NavItem from "./NavItem";
 type Props = {};
 
 const NavItems = (props: Props) => {
   const [activeIndex, setActiveIndex] = useState<null | number>(null);
+
+  const isAnyOpen = activeIndex !== null;
 
   return (
     <div className="flex  gap-4 h-full">
@@ -19,7 +22,15 @@ const NavItems = (props: Props) => {
         };
 
         const isOpen = i === activeIndex;
-        return <div key={category.label}>{category.label}</div>;
+        return (
+          <NavItem
+            category={category}
+            handleOpen={handleOpen}
+            isOpen={isOpen}
+            key={category.value}
+            isAnyOpen={isAnyOpen}
+          ></NavItem>
+        );
       })}
     </div>
   );

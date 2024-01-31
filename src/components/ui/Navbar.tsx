@@ -2,7 +2,7 @@ import React from "react";
 import MaxWidthWrapper from "../MaxWidthWrapper";
 import Link from "next/link";
 import { Icons } from "./Icons";
-import NavItems from "../NavItems";
+import NavItems from "./NavItems";
 
 type Props = {};
 
