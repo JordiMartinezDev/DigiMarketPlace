@@ -1,43 +1,44 @@
-export const PRODUCT_CATEGORIES = [{
-    label: "UI kits",
-    value: "ui_kits" as const,
-    featured: [{
-                name: "Best sellers",
-                href: "#",
-                imageSrc: "/nav/ui-kits/mixed.jpg",
-                },
-                {
-                    name: "Popular",
-                    href: "#",
-                    imageSrc: "/nav/ui-kits/blue.jpg",
-                },
-                {
-                    name: "Recently published",
-                    href: "#",
-                    imageSrc: "/nav/ui-kits/purple.jpg",
-                    },
-                    
-              ],
+export const PRODUCT_CATEGORIES = [
+    {
+      label: 'UI Kits',
+      value: 'ui_kits' as const,
+      featured: [
+        {
+          name: 'Editor picks',
+          href: `/products?category=ui_kits`,
+          imageSrc: '/ui-kits/mixed.jpg',
+        },
+        {
+          name: 'New Arrivals',
+          href: '/products?category=ui_kits&sort=desc',
+          imageSrc: '/ui-kits/blue.jpg',
+        },
+        {
+          name: 'Bestsellers',
+          href: '/products?category=ui_kits',
+          imageSrc: '/ui-kits/purple.jpg',
+        },
+      ],
     },
     {
-        label: "Icons",
-        value: "icons" as const,
-        featured: [{
-                    name: "Favorite Icon Picks",
-                    href: "#",
-                    imageSrc: "/nav/icons/picks.jpg",
-                    },
-                    {
-                        name: "Popular",
-                        href: "#",
-                        imageSrc: "/nav/icons/bestsellers.jpg",
-                    },
-                    {
-                        name: "Recently published",
-                        href: "#",
-                        imageSrc: "/nav/icons/new.jpg",
-                        },
-                          
-                  ],
+      label: 'Icons',
+      value: 'icons' as const,
+      featured: [
+        {
+          name: 'Favorite Icon Picks',
+          href: `/products?category=icons`,
+          imageSrc: '/icons/picks.jpg',
         },
-]
+        {
+          name: 'New Arrivals',
+          href: '/products?category=icons&sort=desc',
+          imageSrc: '/icons/new.jpg',
+        },
+        {
+          name: 'Bestselling Icons',
+          href: '/products?category=icons',
+          imageSrc: '/icons/bestsellers.jpg',
+        },
+      ],
+    },
+  ]
