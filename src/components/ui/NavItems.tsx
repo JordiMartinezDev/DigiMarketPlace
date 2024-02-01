@@ -1,7 +1,12 @@
 "use client";
 
 import { PRODUCT_CATEGORIES } from "@/config";
-import React, { useState, useRef } from "react";
+import React, {
+  useState,
+  useRef,
+  useEffect,
+  KeyboardEventHandler,
+} from "react";
 import NavItem from "./NavItem";
 import { usePathname } from "next/navigation";
 import { useOnClickOutside } from "@/hooks/use-on-click-outside";
@@ -9,6 +14,7 @@ type Props = {};
 
 const NavItems = (props: Props) => {
   const [activeIndex, setActiveIndex] = useState<null | number>(null);
+
   const navRef = useRef<HTMLDivElement | null>(null);
   useOnClickOutside(navRef, () => {
     setActiveIndex(null);
@@ -20,6 +26,14 @@ const NavItems = (props: Props) => {
   }
 
   const isAnyOpen = activeIndex !== null;
+
+  useEffect(() => {
+    const handler = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        setActiveIndex(null);
+      }
+    };
+  }, []);
 
   return (
     <div className="flex  gap-4 h-full" ref={navRef}>
