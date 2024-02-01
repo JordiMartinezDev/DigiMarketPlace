@@ -33,6 +33,12 @@ const NavItems = (props: Props) => {
         setActiveIndex(null);
       }
     };
+
+    document.addEventListener("keydown", handler);
+
+    return () => {
+      document.removeEventListener("keydown", handler);
+    };
   }, []);
 
   return (
