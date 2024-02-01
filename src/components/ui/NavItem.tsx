@@ -1,9 +1,9 @@
 "use client";
 
 import { PRODUCT_CATEGORIES } from "@/config";
-import { Button } from "./Button";
 import { ChevronDown } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { Button } from "./button";
 
 type Category = (typeof PRODUCT_CATEGORIES)[number];
 
@@ -16,19 +16,21 @@ interface NavItemProps {
 
 const NavItem = ({ category, handleOpen, isOpen, isAnyOpen }: NavItemProps) => {
   return (
-    <div className="relative flex items-center">
-      <Button
-        className="gap-1.5"
-        onClick={handleOpen}
-        variant={isOpen ? "secondary" : "ghost"}
-      >
-        {category.label}
-        <ChevronDown
-          className={cn("h-4 w-4 transition-all text-muted-foreground", {
-            "-rotate-189": isOpen,
-          })}
-        ></ChevronDown>
-      </Button>
+    <div className="flex">
+      <div className="relative flex items-center">
+        <Button
+          className="gap-1.5"
+          onClick={handleOpen}
+          variant={isOpen ? "secondary" : "ghost"}
+        >
+          {category.label}
+          <ChevronDown
+            className={cn("h-4 w-4 transition-all text-muted-foreground", {
+              "-rotate-180": isOpen,
+            })}
+          />
+        </Button>
+      </div>
     </div>
   );
 };
