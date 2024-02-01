@@ -4,11 +4,15 @@ import { PRODUCT_CATEGORIES } from "@/config";
 import React, { useState, useRef } from "react";
 import NavItem from "./NavItem";
 import { usePathname } from "next/navigation";
+import { useOnClickOutside } from "@/hooks/use-on-click-outside";
 type Props = {};
 
 const NavItems = (props: Props) => {
   const [activeIndex, setActiveIndex] = useState<null | number>(null);
   const navRef = useRef<HTMLDivElement | null>(null);
+  useOnClickOutside(navRef, () => {
+    setActiveIndex(null);
+  });
 
   const pathname = usePathname();
   {
@@ -18,7 +22,7 @@ const NavItems = (props: Props) => {
   const isAnyOpen = activeIndex !== null;
 
   return (
-    <div className="flex  gap-4 h-full">
+    <div className="flex  gap-4 h-full" ref={navRef}>
       {PRODUCT_CATEGORIES.map((category, i) => {
         const handleOpen = () => {
           if (activeIndex === i) {
