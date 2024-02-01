@@ -1,13 +1,15 @@
 "use client";
 
 import { PRODUCT_CATEGORIES } from "@/config";
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import NavItem from "./NavItem";
 import { usePathname } from "next/navigation";
 type Props = {};
 
 const NavItems = (props: Props) => {
   const [activeIndex, setActiveIndex] = useState<null | number>(null);
+  const navRef = useRef<HTMLDivElement | null>(null);
+
   const pathname = usePathname();
   {
     /** This returns pathname and we could use it to know the selected link on navbar */
