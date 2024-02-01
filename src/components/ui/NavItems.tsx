@@ -3,10 +3,15 @@
 import { PRODUCT_CATEGORIES } from "@/config";
 import React, { useState } from "react";
 import NavItem from "./NavItem";
+import { usePathname } from "next/navigation";
 type Props = {};
 
 const NavItems = (props: Props) => {
   const [activeIndex, setActiveIndex] = useState<null | number>(null);
+  const pathname = usePathname();
+  {
+    /** This returns pathname and we could use it to know the selected link on navbar */
+  }
 
   const isAnyOpen = activeIndex !== null;
 
@@ -22,6 +27,7 @@ const NavItems = (props: Props) => {
         };
 
         const isOpen = i === activeIndex;
+
         return (
           <NavItem
             category={category}
