@@ -66,7 +66,7 @@ const NavItem = ({
                       key={item.name}
                       className="group relative text-base sm:text-sm"
                     >
-                      <div className="relative aspect-video overflow-hidden rounded-lg bg-gray-100 group-hover:opacity-75">
+                      <div className="Navbar-img-style">
                         <Image
                           src={item.imageSrc}
                           alt="product category image"

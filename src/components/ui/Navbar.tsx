@@ -3,6 +3,8 @@ import MaxWidthWrapper from "../MaxWidthWrapper";
 import Link from "next/link";
 import { Icons } from "./Icons";
 import NavItems from "./NavItems";
+import { buttonVariants } from "./button";
+import { Ghost } from "lucide-react";
 
 type Props = {};
 
@@ -26,7 +28,28 @@ const Navbar = (props: Props) => {
               </div>
               <div className="ml-auto flex items-center">
                 <div className="hidden lg:flex lg:flex-1 lg:items-center lg:justify-end lg:space-x-6">
-                  userhere user null. Continue here
+                  {user ? null : (
+                    <Link
+                      href="/sign-in"
+                      className={buttonVariants({ variant: "ghost" })}
+                    >
+                      {" "}
+                      Sign in
+                    </Link>
+                  )}
+                  {user ? (
+                    <span className="h-6 w-px bg-gray-200" aria-hidden="true" />
+                  ) : null}
+                  {user ? (
+                    <p>Mocked user</p>
+                  ) : (
+                    <Link
+                      href="/sign-up"
+                      className={buttonVariants({ variant: "ghost" })}
+                    >
+                      Create account
+                    </Link>
+                  )}
                 </div>
               </div>
             </div>
