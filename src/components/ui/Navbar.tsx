@@ -5,6 +5,7 @@ import { Icons } from "./Icons";
 import NavItems from "./NavItems";
 import { buttonVariants } from "./button";
 import { Ghost } from "lucide-react";
+import Cart from "./Cart";
 
 type Props = {};
 
@@ -58,6 +59,7 @@ const Navbar = (props: Props) => {
                   {user ? (
                     <span className="h-6 w-px bg-gray-200" aria-hidden="true" />
                   ) : null}
+                  <Cart></Cart>
                 </div>
               </div>
             </div>
