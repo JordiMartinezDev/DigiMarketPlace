@@ -52,24 +52,11 @@ const Navbar = (props: Props) => {
                       Create account
                     </Link>
                   )}
-
                   {user ? null : (
-                    <div className="flex lg:ml-6">
-                      <span
-                        className="h-6 w-px bg-gray-200"
-                        aria-hidden="true"
-                      />
-                    </div>
+                    <span className="h-6 w-px bg-gray-200" aria-hidden="true" />
                   )}
-
-                  {/* This is mine */}
                   {user ? (
-                    <Link
-                      href="/logout"
-                      className={buttonVariants({ variant: "ghost" })}
-                    >
-                      Logout
-                    </Link>
+                    <span className="h-6 w-px bg-gray-200" aria-hidden="true" />
                   ) : null}
                 </div>
               </div>
