@@ -11,7 +11,7 @@ import {
 import { Separator } from "./separator";
 
 const Cart = () => {
-  const itemCount = 0;
+  const itemCount = 1;
 
   return (
     <Sheet>
@@ -33,9 +33,25 @@ const Cart = () => {
             <div className="flex w-full flex-col pr-6"> Cart items</div>
             <div className="space-y-4 pr-6">
               <Separator />
+              <div className="space-y-1.5 text-sm">
+                <div className="flex">
+                  <span className="flex-1">Create</span>
+                  <span>Free</span>
+                </div>
+                <div className="flex">
+                  <span className="flex-1">Transfer</span>
+                  <span>Free</span>
+                </div>
+                <div className="flex">
+                  <span className="flex-1">Minting fee</span>
+                  <span>Ethereum minting fee</span>
+                </div>
+              </div>
             </div>
           </>
-        ) : null}
+        ) : (
+          <div></div>
+        )}
       </SheetContent>
     </Sheet>
   );
