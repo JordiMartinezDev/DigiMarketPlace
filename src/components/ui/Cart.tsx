@@ -11,6 +11,8 @@ import {
 } from "./sheet";
 import { Separator } from "./separator";
 import { formatPrice } from "@/lib/utils";
+import Link from "next/link";
+import { buttonVariants } from "./button";
 
 const Cart = () => {
   const itemCount = 1;
@@ -54,7 +56,14 @@ const Cart = () => {
                 </div>
               </div>
               <SheetFooter>
-                <SheetTrigger></SheetTrigger>
+                <SheetTrigger asChild>
+                  <Link
+                    href="/cart"
+                    className={buttonVariants({ className: "w-full" })}
+                  >
+                    Continue to Checkout
+                  </Link>
+                </SheetTrigger>
               </SheetFooter>
             </div>
           </>
