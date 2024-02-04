@@ -58,6 +58,7 @@ const NavItems = (props: Props) => {
         return (
           <NavItem
             category={category}
+            close={close}
             handleOpen={handleOpen}
             isOpen={isOpen}
             key={category.value}
