@@ -84,6 +84,7 @@ const NavItem = ({
                       <p className="mt-1" aria-hidden="true">
                         Shop now
                       </p>
+                      
                     </div>
                   ))}
                 </div>

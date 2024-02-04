@@ -10,6 +10,7 @@ import React, {
 import NavItem from "./NavItem";
 import { usePathname } from "next/navigation";
 import { useOnClickOutside } from "@/hooks/use-on-click-outside";
+import { Open_Sans } from "next/font/google";
 type Props = {};
 
 const NavItems = (props: Props) => {
