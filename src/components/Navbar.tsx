@@ -1,9 +1,9 @@
 import React from "react";
-import MaxWidthWrapper from "../MaxWidthWrapper";
+import MaxWidthWrapper from "./MaxWidthWrapper";
 import Link from "next/link";
-import { Icons } from "./Icons";
+import { Icons } from "./ui/Icons";
 import NavItems from "./NavItems";
-import { buttonVariants } from "./button";
+import { buttonVariants } from "./ui/button";
 import { Ghost } from "lucide-react";
 import Cart from "./Cart";
 
