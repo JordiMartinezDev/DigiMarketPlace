@@ -20,7 +20,7 @@ export default buildConfig({
   // collections: [Users, Products, Media, ProductFiles, Orders],
   collections: [],
   routes: {
-    admin: "/sell",
+    admin: "/admin",
   },
   admin: {
     // user: "users",

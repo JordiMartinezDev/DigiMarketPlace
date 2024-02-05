@@ -1,6 +1,8 @@
 import express from "express";
 import { getPayloadClient } from "./get-payload";
 import { nextApp, nextHandler } from "./next-utils";
+require("dotenv").config();
+
 // import * as trpcExpress from '@trpc/server/adapters/express'
 // import { appRouter } from './trpc'
 // import { inferAsyncReturnType } from '@trpc/server'
@@ -45,6 +47,7 @@ const start = async () => {
   const payload = await getPayloadClient({
     initOptions: {
       express: app,
+      secret: process.env.PAYLOAD_SECRET,
       onInit: async (cms) => {
         cms.logger.info(`Admin URL: ${cms.getAdminURL()}`);
       },
