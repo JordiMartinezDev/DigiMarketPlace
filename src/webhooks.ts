@@ -4,10 +4,10 @@ import { stripe } from "./lib/stripe";
 import type Stripe from "stripe";
 import { getPayloadClient } from "./get-payload";
 import { Product } from "./payload-types";
-import { Resend } from "resend";
+// import { Resend } from "resend";
 // import { ReceiptEmailHtml } from "./components/emails/ReceiptEmail";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+// const resend = new Resend(process.env.RESEND_API_KEY);
 
 export const stripeWebhookHandler = async (
   req: express.Request,
