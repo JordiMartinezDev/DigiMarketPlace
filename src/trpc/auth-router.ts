@@ -1,4 +1,4 @@
-import { AuthCredentialsValidator } from "@/lib/validators/accountCredentialsValidator";
+import { AuthCredentialsValidator } from "../lib/validators/account-credentials-validator";
 import { publicProcedure, router } from "./trpc";
 import { getPayloadClient } from "../get-payload";
 import { TRPCError } from "@trpc/server";
@@ -56,6 +56,7 @@ export const authRouter = router({
     .input(AuthCredentialsValidator)
     .mutation(async ({ input, ctx }) => {
       const { email, password } = input;
+      const { res } = ctx;
 
       const payload = await getPayloadClient();
 
@@ -66,6 +67,7 @@ export const authRouter = router({
             email,
             password,
           },
+          res,
         });
 
         return { success: true };

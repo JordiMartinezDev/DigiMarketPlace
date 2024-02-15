@@ -16,7 +16,7 @@ import { z } from "zod";
 import {
   AuthCredentialsValidator,
   TAuthCredentialsValidator,
-} from "@/lib/validators/accountCredentialsValidator";
+} from "@/lib/validators/account-credentials-validator";
 
 const Page = () => {
   const {
