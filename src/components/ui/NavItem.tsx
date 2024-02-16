@@ -1,7 +1,7 @@
 "use client";
 
 import { PRODUCT_CATEGORIES } from "@/config";
-import { Button } from "./ui/button";
+import { Button } from "./button";
 import { ChevronDown } from "lucide-react";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
@@ -84,6 +84,7 @@ const NavItem = ({
                       <p className="mt-1" aria-hidden="true">
                         Shop now
                       </p>
+                      
                     </div>
                   ))}
                 </div>

@@ -2,7 +2,6 @@ import { buildConfig } from "payload/config";
 import { webpackBundler } from "@payloadcms/bundler-webpack";
 import { mongooseAdapter } from "@payloadcms/db-mongodb";
 import { slateEditor } from "@payloadcms/richtext-slate";
-import { Users } from "./collections/users";
 import path from "path";
 import dotenv from "dotenv";
 
@@ -18,13 +17,13 @@ dotenv.config({
 
 export default buildConfig({
   serverURL: process.env.NEXT_PUBLIC_SERVER_URL || "",
-  collections: [Users/*, Products, Media, ProductFiles, Orders*/],
-  //collections: [],
+  // collections: [Users, Products, Media, ProductFiles, Orders],
+  collections: [],
   routes: {
     admin: "/admin",
   },
   admin: {
-    user: "users",
+    // user: "users",
     bundler: webpackBundler(),
     meta: {
       titleSuffix: "- BTokenized",
