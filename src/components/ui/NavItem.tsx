@@ -84,7 +84,6 @@ const NavItem = ({
                       <p className="mt-1" aria-hidden="true">
                         Shop now
                       </p>
-                      
                     </div>
                   ))}
                 </div>
@@ -92,7 +91,9 @@ const NavItem = ({
             </div>
           </div>
         </div>
-      ) : null}
+      ) : (
+        <div onClick={() => handleOpen()}></div>
+      )}
     </div>
   );
 };
